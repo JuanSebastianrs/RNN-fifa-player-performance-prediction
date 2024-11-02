@@ -40,5 +40,11 @@ The RNN model, specifically the optimized \textit{RNN\_Ponderado}, demonstrated 
 - **Integration with Real Player Data**: Incorporating real-world player performance data for enhanced applicability.
 - **Architecture Optimization**: Exploring hybrid models such as Transformers for capturing long-term trends.
 - **Feature Expansion**: Including additional features, like physical and psychological metrics, to improve model accuracy.
+## Dataset
+The dataset used for this project is derived from FIFA player statistics. Due to size constraints and licensing, it is not included directly in this repository. You can access and download the dataset from the following link:
+
+- [FIFA-Derived Football Player Data (2005-2021)](URL_DEL_ENLACE)
+
+Please make sure to download the dataset and place it in the `data/` directory of the project before running the code.
 
 
