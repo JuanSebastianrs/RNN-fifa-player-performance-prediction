@@ -11,11 +11,11 @@ This project presents a model for predicting the performance of football players
 - **Results**: The custom RNN model achieved an MSE of 3.70, an MAE of 1.42, and an R² of 0.90, showcasing strong predictive capabilities for high-performing players.
 
 ## Project Structure
-- **data/**: Contains raw and cleaned datasets (not included in this repository due to size).
-- **notebooks/**: Jupyter notebooks for data exploration, preprocessing, and model training.
-- **scripts/**: Python scripts for data preprocessing and feature engineering.
-- **models/**: Saved models and configurations.
-- **results/**: Visualizations and evaluation metrics for model performance.
+- **data**: Contains raw and cleaned datasets (not included in this repository due to size).
+- **notebooks**: Jupyter notebooks for data exploration, preprocessing, and model training.
+- **scripts**: Python scripts for data preprocessing and feature engineering.
+- **models**: Saved models and configurations.
+- **results**: Visualizations and evaluation metrics for model performance.
 - **README.md**: Project documentation.
 
 ## Methodology
