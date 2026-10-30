@@ -1,50 +1,57 @@
-# Football Player Performance Prediction Using FIFA Database and Recurrent Neural Networks
+# Football Player Rating Prediction
 
-## Overview
-This project presents a model for predicting the performance of football players over time using Recurrent Neural Networks (RNN) and historical data from the FIFA video game series. The model applies advanced data preprocessing techniques to capture the evolution of player performance and aims to provide accurate predictions based on past performance.
+**Recurrent neural networks and regression baselines for historical FIFA video-game player ratings.**
 
-## Features
-- **Data Source**: FIFA player attribute data from 2005 to 2021.
-- **Preprocessing**: Data cleaning, feature selection, temporal sequence generation.
-- **Models Used**: Initial regression models (Ridge, Lasso, Bayesian Ridge, SVR, Random Forest) and a custom RNN model.
-- **Evaluation Metrics**: Mean Squared Error (MSE), Mean Absolute Error (MAE), Coefficient of Determination (R²).
-- **Results**: The custom RNN model achieved an MSE of 3.70, an MAE of 1.42, and an R² of 0.90, showcasing strong predictive capabilities for high-performing players.
+A machine-learning project exploring temporal modeling of yearly player attributes. The target comes from FIFA ratings; it should not be interpreted as a validated forecast of real match performance.
 
-## Project Structure
-- **data**: Contains raw and cleaned datasets (not included in this repository due to size).
-- **notebooks**: Jupyter notebooks for data exploration, preprocessing, and model training.
-- **scripts**: Python scripts for data preprocessing and feature engineering.
-- **models**: Saved models and configurations.
-- **results**: Visualizations and evaluation metrics for model performance.
-- **README.md**: Project documentation.
+[Training and evaluation notebook](Entrega%20final/Entrega%20Final%20Deep%20Learning.ipynb) · [Data-cleaning functions](Entrega%20final/funciones_de_limpieza.py) · [Saved RNN model](Entrega%20final/best_RNN_Ponderado.keras)
 
-## Methodology
-1. **Data Collection**: We use FIFA player attributes from 2005 to 2021, sourced from Kaggle.
-2. **Data Preprocessing**:
-   - Concatenation of yearly data files.
-   - Cleaning (removal of null values, duplicate records, and irrelevant columns).
-   - Standardization and feature selection.
-   - Generation of 5-year temporal sequences to capture performance trends.
-3. **Model Selection**:
-   - Several regression and machine learning models were evaluated initially, which presented overfitting issues.
-   - A Recurrent Neural Network (RNN) model was developed to better capture the temporal relationships in player data.
-4. **Evaluation**: The model was evaluated using MSE, MAE, and R², with comparisons against a Gradient Boosting model.
+## Approach
 
-## Results
-The RNN model, specifically the optimized \textit{RNN\_Ponderado}, demonstrated an effective balance of accuracy and generalization, with:
-- **MSE**: 3.70
-- **MAE**: 1.42
-- **R²**: 0.90
+1. Combine historical player-attribute tables from FIFA editions covering 2005–2021.
+2. Clean records and select relevant features.
+3. Build five-year temporal sequences.
+4. Compare regression baselines and a recurrent neural network.
+5. Evaluate with MSE, MAE and R².
 
-## Future Improvements
-- **Integration with Real Player Data**: Incorporating real-world player performance data for enhanced applicability.
-- **Architecture Optimization**: Exploring hybrid models such as Transformers for capturing long-term trends.
-- **Feature Expansion**: Including additional features, like physical and psychological metrics, to improve model accuracy.
-## Dataset
-The dataset used for this project is derived from FIFA player statistics. Due to size constraints and licensing, it is not included directly in this repository. You can access and download the dataset from the following link:
+The project documents experiments with Ridge, Lasso, Bayesian Ridge, SVR and Random Forest, followed by the recurrent model.
 
-- [FIFA-Derived Football Player Data (2005-2021)](URL_DEL_ENLACE)
+## Reported results
 
-Please make sure to download the dataset and place it in the `data/` directory of the project before running the code.
+| Metric | Reported RNN result |
+| --- | ---: |
+| MSE | 3.70 |
+| MAE | 1.42 |
+| R² | 0.90 |
 
+These values are reported in the original project documentation. They describe that experiment and dataset, rather than a benchmark on real-world player outcomes.
 
+## Repository contents
+
+```text
+Entrega final/
+  Entrega Final Deep Learning.ipynb   # Main experiment
+  funciones_de_limpieza.py           # Data preprocessing
+  best_RNN_Ponderado.keras           # Saved Keras model
+README.md
+```
+
+## Explore the experiment
+
+```bash
+git clone https://github.com/JuanSebastianrs/RNN-fifa-player-performance-prediction.git
+cd RNN-fifa-player-performance-prediction
+jupyter lab
+```
+
+Open the notebook in `Entrega final/` using a Python environment compatible with its imports. Inspect the data paths before running cells; the original experiment environment is not locked in a requirements file.
+
+The source FIFA tables are not bundled as a complete dataset in this repository. Reproduction requires obtaining the matching historical tables and adjusting the notebook's input paths. The notebook is the reference for the input schema and preprocessing.
+
+## Interpretation and next steps
+
+Useful extensions include a clearly documented temporal holdout, comparison with simple persistence baselines, an environment specification and evaluation on external football data. These are future improvements, not completed features.
+
+## Resumen en español
+
+Proyecto de modelado temporal con redes neuronales recurrentes para predecir valoraciones de jugadores en datos históricos del videojuego FIFA. Incluye el notebook, funciones de limpieza y un modelo guardado; se documenta la diferencia entre predecir estas valoraciones y predecir rendimiento deportivo real.
